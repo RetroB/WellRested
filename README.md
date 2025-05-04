@@ -13,7 +13,7 @@ A simple Minecraft plugin that gives players a saturation effect when they wake 
 
 ## Installation
 
-1. Download the latest release from the [Releases](https://github.com/RetroB/WellRested/releases) page
+1. Download the latest release from the [Modrinth](https://modrinth.com/plugin/wellrested) page
 2. Place the JAR file in your server's `plugins` folder
 3. Restart your server or use a plugin manager to load the plugin
 4. Edit the configuration file if needed
