@@ -1,0 +1,15 @@
+name: WellRested
+version: '${project.version}'
+main: com.minecraft.wellrested.WellRested
+api-version: '1.21'
+description: Gives players saturation effect when they wake up from a bed
+authors: [RetroB]
+commands:
+  wellrested:
+    description: WellRested plugin commands
+    usage: /<command> reload
+    permission: wellrested.admin
+permissions:
+  wellrested.admin:
+    description: Allows access to WellRested admin commands
+    default: op

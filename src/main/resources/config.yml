@@ -7,12 +7,6 @@ saturation:
   # Amplifier level (0 = level I, 1 = level II, etc.)
   amplifier: 1
 
-# Detection settings
-detection:
-  # Set to true to use alternative detection method for compatibility with time acceleration plugins
-  # This will detect when a player leaves a bed during daytime (before sunset)
-  use_alternative_method: true
-
 # Messages
 messages:
   # Message shown when player wakes up

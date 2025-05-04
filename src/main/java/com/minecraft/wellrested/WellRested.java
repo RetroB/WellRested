@@ -49,14 +49,7 @@ public class WellRested extends JavaPlugin implements Listener {
         saturationAmplifier = config.getInt("saturation.amplifier", 1);
         wellRestedMessage = ChatColor.translateAlternateColorCodes('&', 
                 config.getString("messages.well-rested", "&aYou got a very good sleep, and now you're well rested!"));
-        
-        // Load detection method configuration
-        useAlternativeDetection = config.getBoolean("detection.use_alternative_method", true);
-        getLogger().info("Using alternative detection method: " + useAlternativeDetection);
     }
-    
-    // Configuration for alternative detection method
-    private boolean useAlternativeDetection;
     
     /**
      * Handles when a player leaves a bed
@@ -65,24 +58,10 @@ public class WellRested extends JavaPlugin implements Listener {
     public void onPlayerWakeUp(PlayerBedLeaveEvent event) {
         Player player = event.getPlayer();
         
-        // Get the current world time
+        // Check if it's morning (player actually slept through the night)
+        // Time is between 0 and 24000, with 0 being sunrise
         long worldTime = player.getWorld().getTime();
-        boolean sleptThroughNight = false;
-        
-        // Check if player slept through the night using one of two methods:
-        // 1. Standard method: Check if it's morning (time between 0-1000)
-        // 2. Alternative method: Check if the player actually slept (bed occupied) and now it's day
         if (worldTime >= 0 && worldTime <= 1000) {
-            // Standard detection - it's morning now
-            sleptThroughNight = true;
-        } else if (useAlternativeDetection && player.getWorld().getTime() < 12500) {
-            // Alternative detection - it's daytime (before sunset at 12500)
-            // This helps with plugins that accelerate time instead of skipping it
-            // We assume if they're leaving bed during the day, they likely slept
-            sleptThroughNight = true;
-        }
-        
-        if (sleptThroughNight) {
             // Apply saturation effect
             player.addPotionEffect(new PotionEffect(
                     PotionEffectType.SATURATION,
