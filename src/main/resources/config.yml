@@ -1,0 +1,19 @@
+# WellRested Plugin Configuration
+
+# Saturation effect settings
+saturation:
+  # Duration in seconds
+  duration: 15
+  # Amplifier level (0 = level I, 1 = level II, etc.)
+  amplifier: 1
+
+# Detection settings
+detection:
+  # Set to true to use alternative detection method for compatibility with time acceleration plugins
+  # This will detect when a player leaves a bed during daytime (before sunset)
+  use_alternative_method: true
+
+# Messages
+messages:
+  # Message shown when player wakes up
+  well-rested: "&aYou got a very good sleep, and now you're well rested!"
