@@ -2,6 +2,8 @@
 
 A simple Minecraft plugin that gives players a saturation effect when they wake up from a bed.
 
+Also, kind reminder to ignore all of those useless commits, I'm still new to GitHub.
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![CodeFactor](https://www.codefactor.io/repository/github/retrob/wellrested/badge)](https://www.codefactor.io/repository/github/retrob/wellrested)
 
 ## Features
